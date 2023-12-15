@@ -28,7 +28,7 @@ function buildHTMLStructure() {
     const navItemLeft = createElement("li", { class: "nav__items--left" }, navItems);
     createElement("a", { href: "./home.html" }, navItemLeft).innerText = "POKEDEX";
     const navItemRight = createElement("li", { class: "nav__items--right" }, navItems);
-    createElement("a", {}, navItemRight).innerText = "BATTLE!";
+    createElement("a", { href: "../pages/battler.html" }, navItemRight).innerText = "BATTLE!";
 
     // main section
     const main = createElement("main", { class: "main" }, document.body);
@@ -49,7 +49,7 @@ function buildHTMLStructure() {
     // photo section
     const photo = createElement("section", { class: "photo" }, main);
     const photoPlatform = createElement("div", { class: "photo__platform" }, photo);
-    createElement("img", { src: "./assets/images.jpg", alt: "placeholder pokemon" }, photoPlatform);
+    createElement("img", { src: "./assets/squirtle.png", alt: "placeholder pokemon" }, photoPlatform);
 
     // stats section
     const stats = createElement("section", { class: "stats" }, main);
