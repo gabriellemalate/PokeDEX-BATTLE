@@ -101,6 +101,7 @@ async function handlePSearchEvent(event) {
   event.preventDefault();
   console.log("reched");
   makeSecondNetworkRequest(event.target.text.value);
+  makeFirstNetworkRequest(pickOpponent());
 }
 
 async function makeFirstNetworkRequest(pokemonName) {
