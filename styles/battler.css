@@ -92,16 +92,14 @@ body svg {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 10.6vh;
   padding: 1rem 0 2rem;
 }
 .footer__columns {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  width: 70%;
+  justify-content: space-around;
+  width: 100%;
 }
 .footer__column {
   font-weight: 500;
@@ -109,6 +107,8 @@ body svg {
   flex-direction: column;
   align-items: center;
   font-size: 1.2rem;
+  padding: 1vw;
+  text-align: center;
 }
 .footer__column--info {
   font-size: 0.8rem;

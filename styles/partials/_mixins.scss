@@ -31,3 +31,7 @@
         @content;
     }
 }
+
+@mixin growHeight{
+    height: 30vw;
+}

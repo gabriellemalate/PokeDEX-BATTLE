@@ -2,33 +2,62 @@
 @use "./partials/mixins" as *;
 @use "./partials/global";
 
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include tabletPlus{
+        background-image: url("../assets/scene.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
 .main {
-    @include row;
+    @include column;
     justify-content: center;
     background-image: url("../assets/scene.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 12rem 0 14rem;
+    // padding: 12rem 0 14rem;
+    
+    @include tabletPlus{
+        @include row;
+        height: 50vw;
 
+        background-image: none;
+        background-repeat: unset;
+        background-size: unset;
+        background-position: unset;
+    }
 }
 
 .search {
     background-color: $red;
     @include column;
-    width: 22rem;
+    width: 50vw;
     min-width: 21.875rem;
     border-radius: 0.8rem;
     // margin-top: 4rem;
     // margin-left: 2rem;
-    align-self: flex-start;
+    // align-self: flex-start;
     border: $red-deep .1rem solid;
+
+    @include tabletPlus{
+        min-height: 19.375rem;
+        height: 85%;
+        width: unset;
+    }
 
     &__top {
         @include row;
         align-items: flex-end;
         justify-content: center;
-        width: 90%;
+        // width: 90%;
         margin: .6rem 0 1rem;
 
         &--head {
@@ -38,6 +67,10 @@
             font-size: 1.2rem;
             position: relative;
             right: 2rem;
+
+            @include tabletPlus{
+                position: unset;
+            }
         }
     }
 
@@ -125,31 +158,68 @@
 }
 
 .photo {
-    background-color: rgb(23, 18, 18);
+    background-color: rgb(222, 222, 222);
     @include column;
-    width: 30%;
+    justify-content: center;
+    width: 50vw;
+    flex-grow: 1;
+    min-width: 21.875rem;
     min-height: 25rem;
     border-radius: 0.8rem;
     border: 2rem $red solid;
     padding: 2rem 0 2rem;
     // margin-top: 4rem;
+
+    @include tabletPlus{
+        border: 0.5rem $red solid;
+        min-width: unset;
+        min-height: 19.375rem;
+        height: 85%;
+        // display: block;
+    }
+
+    &__platform{
+        @include column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        img{
+            max-width:90%;
+            width: 90%;
+            // height: 100%;
+        }
+    }    
 }
 
 .stats {
     background-color: $red;
     @include column;
-    align-self: flex-start;
-    width: 20rem;
+    // align-self: flex-start;
+    // width: 20rem;
+    width: 50vw;
     min-width: 21.875rem;
+    // min-width: 21.875rem;
     border-radius: 0.8rem;
     // margin-top: 4rem;
-    padding-bottom: 3rem;
+    // padding-bottom: 3rem;
     // margin-right: 2rem;
     border: $red-deep .1rem solid;
+
+    @include tabletPlus{
+        width: 20vw;
+        min-width: 10rem;
+        min-height: 19.375rem;
+        padding: 16px;
+        height: 85%;
+    }
 
     &__eq {
         @include column;
         align-items: flex-start;
+
+        @include tabletPlus{
+            width: 95%;
+        }
     }
 
     &__head {
@@ -163,6 +233,12 @@
         font-weight: bold;
         font-size: 1.2rem;
         align-self: center;
+
+        @include tabletPlus{
+            // padding: unset;
+            margin: unset;
+            width: 100%;
+        }
     }
 
     &__info {
@@ -172,6 +248,10 @@
         padding: 1rem;
         background-color: rgb(11, 75, 11);
         width: 10rem;
+
+        @include tabletPlus{
+            width: 100%;
+        }
     }
 
     &__title {
