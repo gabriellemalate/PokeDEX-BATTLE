@@ -18,3 +18,20 @@
     border-radius: 0.8rem;
     border: $red-deep .1rem solid;
 }
+
+//Responsive Mixins
+@mixin tabletPlus{
+    @media (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media(min-width: 1280px){
+        @content;
+    }
+}
+
+@mixin growHeight{
+    height: 30vw;
+}

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: avenir, Arial, Helvetica, sans-serif;
   margin: 0;
@@ -23,6 +27,7 @@ body svg {
 .nav {
   background-color: goldenrod;
   margin: 0;
+  padding-left: 2vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,7 +45,6 @@ body svg {
 }
 .nav__logo {
   margin: 0;
-  padding: 0 2rem;
   transition: 0.3s;
   width: 4rem;
 }
@@ -88,16 +92,14 @@ body svg {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 10.6vh;
   padding: 1rem 0 2rem;
 }
 .footer__columns {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  width: 70%;
+  justify-content: space-around;
+  width: 100%;
 }
 .footer__column {
   font-weight: 500;
@@ -105,17 +107,21 @@ body svg {
   flex-direction: column;
   align-items: center;
   font-size: 1.2rem;
+  padding: 1vw;
+  text-align: center;
 }
 .footer__column--info {
   font-size: 0.8rem;
   margin: 0;
 }
 
-.main-battler {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+@media (min-width: 768px) {
+  .main-battler {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }
 .main-battler__button {
   all: unset;
@@ -251,28 +257,48 @@ body svg {
   margin: 0.5rem 0;
 }
 
+.battlefield {
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: 768px) {
+  .battlefield {
+    flex-direction: row;
+  }
+}
+
 .user {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
 }
 .user__status {
   position: relative;
-  top: 5rem;
-  left: 18rem;
   background-color: yellow;
 }
 .user__streak {
   position: relative;
-  top: 4rem;
   background-color: yellow;
 }
 .user__image {
-  align-self: flex-end;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .user__image {
+    align-self: flex-end;
+    width: unset;
+  }
 }
 
 .opponent {
-  align-self: flex-start;
+  width: 45vw;
+}
+.opponent__image {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .opponent {
+    align-self: flex-start;
+  }
 }/*# sourceMappingURL=battler.css.map */
