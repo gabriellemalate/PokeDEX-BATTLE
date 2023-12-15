@@ -83,6 +83,7 @@ function buildHTMLStructure() {
       type: "search",
       placeholder: "Enter Pokemon Name",
       style: "resize: none;",
+      name: "text",
     },
     searchForm
   );
@@ -177,6 +178,7 @@ function buildHTMLStructure() {
     { class: "footer__column--info" },
     footerColumn3
   ).innerText = "Web API. Javascript programming";
+  searchForm.addEventListener("submit", handleSearchEvent);
 }
 let apiInstance = new PokemonApi();
 
