@@ -116,11 +116,29 @@ body svg {
 }
 
 @media (min-width: 768px) {
+  body {
+    background-image: url("../assets/scene.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.main-battler {
+  justify-content: center;
+  background-image: url("../assets/scene.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 768px) {
   .main-battler {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    height: 100%;
+    align-items: end;
   }
 }
 .main-battler__button {
@@ -260,10 +278,13 @@ body svg {
 .battlefield {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .battlefield {
-    flex-direction: row;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    width: 60%;
   }
 }
 
@@ -272,33 +293,61 @@ body svg {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  flex-grow: 1;
+  align-items: flex-end;
+  width: 50vw;
+}
+@media (min-width: 768px) {
+  .user {
+    align-items: flex-start;
+  }
 }
 .user__status {
   position: relative;
+  align-self: center;
+  display: block;
   background-color: yellow;
 }
 .user__streak {
   position: relative;
+  display: block;
+  align-self: center;
   background-color: yellow;
 }
-.user__image {
+.user__photo {
   width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.user__platform {
+  width: 100%;
+  display: flex;
+}
+.user_image {
+  width: 100%;
+  overflow: unset;
 }
 @media (min-width: 768px) {
-  .user__image {
+  .user_image {
     align-self: flex-end;
-    width: unset;
   }
 }
 
 .opponent {
-  width: 45vw;
-}
-.opponent__image {
-  width: 100%;
+  width: 50vw;
 }
 @media (min-width: 768px) {
   .opponent {
-    align-self: flex-start;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
   }
+}
+.opponent__photo {
+  width: 100%;
+  max-width: 30vw;
+}
+.opponent__image {
+  width: 100%;
 }/*# sourceMappingURL=battler.css.map */
