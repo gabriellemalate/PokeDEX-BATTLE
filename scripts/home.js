@@ -69,7 +69,7 @@ function buildHTMLStructure() {
     const footerColumn1 = createElement("div", { class: "footer__column" }, footerColumns);
     createElement("p", null, footerColumn1).innerText = "Gabrielle Malate";
     createElement("p", { class: "footer__column--info" }, footerColumn1).innerText = "Flexbox/Sass/BEM/HTML";
-    createElement("p", { class: "footer__column--info" }, footerColumn1).innerText = "DOM: Creating Elements";
+    createElement("p", { class: "footer__column--info" }, footerColumn1).innerText = "DOM: site setup. CSS animation";
 
     // footer column 2
     const footerColumn2 = createElement("div", { class: "footer__column" }, footerColumns);
