@@ -151,12 +151,14 @@ function renderOpponentData(displayableData) {
   const attack = document.querySelector("#opp-attack");
   const defense = document.querySelector("#opp-defense");
   const speed = document.querySelector("#opp-speed");
+  const image = document.querySelector(".opponent__image");
 
   name.innerText = ` ${displayableData.name}`;
   hp.innerText = ` ${displayableData.hp}`;
   attack.innerText = ` ${displayableData.attack}`;
   defense.innerText = ` ${displayableData.defense}`;
   speed.innerText = ` ${displayableData.speed}`;
+  image.setAttribute("src", displayableData.imgSrc);
 }
 
 function renderPlayerData(displayableData) {
@@ -165,12 +167,14 @@ function renderPlayerData(displayableData) {
   const attack = document.querySelector("#choose-attack");
   const defense = document.querySelector("#choose-defense");
   const speed = document.querySelector("#choose-speed");
+  const image = document.querySelector(".user_image");
 
   name.innerText = ` ${displayableData.name}`;
   hp.innerText = ` ${displayableData.hp}`;
   attack.innerText = ` ${displayableData.attack}`;
   defense.innerText = ` ${displayableData.defense}`;
   speed.innerText = ` ${displayableData.speed}`;
+  image.setAttribute("src", displayableData.imgSrc);
 }
 
 function pickOpponent() {
