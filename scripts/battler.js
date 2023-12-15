@@ -9,7 +9,6 @@ function createElement(tag, attributes, parent) {
     }
     return element;
 }
-
 // Function to build the HTML structure
 function buildHTMLStructure() {
     // header

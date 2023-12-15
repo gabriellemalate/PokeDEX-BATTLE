@@ -1,0 +1,155 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./partials/global";
+
+.main-battler {
+    @include row;
+    justify-content: space-evenly;
+
+    &__button {
+        all: unset;
+        cursor: pointer;
+        width: 60%;
+        @include row;
+        justify-content: space-around;
+        background-color: gold;
+        border-radius: 2%;
+        color: $red-deep;
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+        padding: .2rem .2rem;
+        border: 2px solid $red-deep;
+        margin: 1rem 0 2rem;
+        height: 2rem;
+    }
+}
+
+.statistics {
+    @include column;
+}
+
+.randomizer {
+    @include box;
+    @include column;
+    background-color: gray;
+    border: black 2px solid;
+
+    &__head {
+        color: greenyellow;
+        border-radius: .2rem;
+        border: 2px solid black;
+        padding: 1rem;
+        background-color: rgb(11, 75, 11);
+        width: 10rem;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        align-self: center;
+    }
+
+    &__info {
+        color: greenyellow;
+        border-radius: .2rem;
+        border: 2px solid black;
+        padding: 1rem;
+        background-color: rgb(11, 75, 11);
+        width: 10rem;
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        margin: .5rem 0;
+    }
+}
+
+.choose {
+    @include box;
+    @include column;
+    &__head {
+        color: rgb(11, 75, 11);
+        text-shadow: 1px 1px 3px greenyellow;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    &__form {
+        @include column;
+        margin-top: .6rem;
+
+        &--box {
+            all: unset;
+            font: 16px system-ui;
+            color: yellow;
+            font-weight: bold;
+            letter-spacing: .1rem;
+            height: 100%;
+            width: 100%;
+            padding: 6px 10px;
+            border: $red-deep solid 1px;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+
+            &::placeholder {
+                color: #fff;
+                opacity: 0.7;
+            }
+        }
+
+        &--button {
+            all: unset;
+            cursor: pointer;
+            width: 60%;
+            @include row;
+            justify-content: space-around;
+            background-color: $blue;
+            border-radius: 10%;
+            color: aliceblue;
+            font-weight: bold;
+            letter-spacing: 0.2rem;
+            padding: 1rem 1rem;
+            border: 2px solid rgb(2, 2, 52);
+            margin: 1rem 0 2rem;
+            height: 2rem;
+        }
+    }
+    &__info {
+        color: greenyellow;
+        border-radius: .2rem;
+        border: 2px solid black;
+        padding: 1rem;
+        background-color: rgb(11, 75, 11);
+        width: 10rem;
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        margin: .5rem 0;
+    }
+}
+
+.user {
+    @include column;
+    justify-content: space-between;
+    height: 100vh;
+
+    &__status {
+        position: relative;
+        top: 5rem;
+        left: 18rem;
+        background-color: yellow;
+    }
+
+    &__streak {
+        position: relative;
+        top: 4rem;
+        background-color: yellow;
+    }
+
+    &__image {
+        align-self: flex-end;
+    }
+}
+
+.opponent {
+    align-self: flex-start;
+}

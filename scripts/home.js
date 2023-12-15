@@ -1,5 +1,3 @@
-// script.js
-
 // Function to create an element with attributes and append it to a parent
 function createElement(tag, attributes, parent) {
     const element = document.createElement(tag);
@@ -19,7 +17,7 @@ function buildHTMLStructure() {
     const nav = createElement("nav", { class: "nav" }, header);
     const navSmooth = createElement("div", { class: "nav__smooth" }, nav);
 
-    // Add logo to the header
+    // logo
     const logoLink = createElement("a", { href: "./home.html" }, navSmooth);
     const logoImg = createElement("img", { class: "nav__logo", src: "./assets/Pokedex_tool_icon-icons.com_67529.png" }, logoLink);
 
@@ -59,6 +57,7 @@ function buildHTMLStructure() {
     createElement("p", { class: "stats__title" }, statsInfo).innerHTML = "Name: <span class='stats__data'></span>";
     createElement("p", { class: "stats__title" }, statsInfo).innerHTML = "HP: <span class='stats__data'></span>";
     createElement("p", { class: "stats__title" }, statsInfo).innerHTML = "Attack: <span class='stats__data'></span>";
+    createElement("p", { class: "stats__title" }, statsInfo).innerHTML = "Defense: <span class='stats__data'></span>";
     createElement("p", { class: "stats__title" }, statsInfo).innerHTML = "Speed: <span class='stats__data'></span>";
 
     // footer
@@ -78,6 +77,7 @@ function buildHTMLStructure() {
     // footer column 3
     const footerColumn3 = createElement("div", { class: "footer__column" }, footerColumns);
     createElement("p", null, footerColumn3).innerText = "Steven Faliszewski";
+    createElement("p", { class: "footer__column--info" }, footerColumn3).innerText = "Web API. Javascript programming";
 }
 
 // Invoking the function to build the HTML structure

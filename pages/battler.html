@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POKEDEX:BATTLE</title>
 
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/battler.css">
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -15,6 +15,61 @@
 </head>
 
 <body>
+    <main class="main-battler">
+
+        <section class="statistics">
+            <section class="randomizer">
+                <h4 class="randomizer__head">OPPONENT</h4>
+                <article class="randomizer__info">
+                    <p class="randomizer__title">Name:<span class="stats__data"></span></p>
+                    <p class="randomizer__title">HP:<span class="stats__data"></span></p>
+                    <p class="randomizer__title">Attack:<span class="stats__data"></span></p>
+                    <p class="randomizer__title">Defense:<span class="stats__data"></span></p>
+                    <p class="randomizer__title">Speed:<span class="stats__data"></span></p>
+                </article>
+            </section>
+
+            <button class="main-battler__button">
+                BATTLE!
+            </button>
+
+            <section class="choose">
+                <h4 class="choose__head">YOUR POKEMON</h4>
+                <form class="choose__form" action="" method="">
+                    <textarea class="choose__form--box" type="search" placeholder="Choose Your Pokemon"
+                        style="resize: none;"></textarea>
+                    <button class="choose__form--button" type="submit">CHOOSE!</button>
+                </form>
+                <article class="choose__info">
+                    <p class="choose__title">Name:<span class="stats__data"></span></p>
+                    <p class="choose__title">HP:<span class="stats__data"></span></p>
+                    <p class="choose__title">Attack:<span class="stats__data"></span></p>
+                    <p class="choose__title">Defense:<span class="stats__data"></span></p>
+                    <p class="choose__title">Speed:<span class="stats__data"></span></p>
+                </article>
+            </section>
+        </section>
+
+        <section class="user">
+            <h3 class="user__streak">HOT STREAK<span class="user__streak--wins"></span></h3>
+            <h2 class="user__status">YOU WIN/LOSE</h2>
+            <div class="user__photo">
+                <div class="user__platform">
+                    <img class="user_image" width="420rem" src="../assets/back.png" alt="placeholder pokemon">
+                </div>
+            </div>
+        </section>
+
+        <section class="opponent">
+            <div class="opponent__photo">
+                <div class="opponent__platform">
+                    <img class="opponent__image" width="420rem" src="../assets/front.png" alt="placeholder pokemon">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
 </body>
 
 </html>

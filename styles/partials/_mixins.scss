@@ -11,3 +11,10 @@
     flex-direction: row;
     align-items: center;
 }
+
+@mixin box {
+    background-color: $red;
+    width: 20rem;
+    border-radius: 0.8rem;
+    border: $red-deep .1rem solid;
+}

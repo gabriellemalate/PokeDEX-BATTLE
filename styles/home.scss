@@ -2,93 +2,6 @@
 @use "./partials/mixins" as *;
 @use "./partials/global";
 
-body {
-    font-family: avenir, Arial, Helvetica, sans-serif;
-    margin: 0;
-    background-color: green;
-
-    header {
-        margin: 0;
-    }
-
-    & ul {
-        list-style-type: none;
-    }
-
-    & a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    svg {
-        color: aliceblue;
-        fill: currentColor;
-        width: 1.8rem;
-    }
-}
-
-/* Navigation Bar */
-.nav {
-    background-color: goldenrod;
-    margin: 0;
-    @include row;
-    justify-content: flex-start;
-    height: 10vh;
-
-    &__smooth {
-        @include row;
-        width: 34%;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding-top: 1rem;
-    }
-
-    &__logo {
-        margin: 0;
-        padding: 0 2rem;
-        transition: 0.3s;
-        width: 4rem;
-
-        &:hover {
-            transform: scale(1.2);
-        }
-    }
-
-    &__items {
-        @include row;
-        justify-content: space-between;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        padding-top: 1rem;
-        font-size: 2rem;
-        width: 70%;
-        font-weight: 500;
-
-        &--left {
-            padding: 0;
-            color: black;
-            transition: 0.2s;
-
-            &:hover {
-                color: green;
-            }
-        }
-
-        &--right {
-            width: 50%;
-            transition: 0.5s;
-            color: lightgray;
-            transition: 0.5s;
-
-            &:hover {
-                color: $red;
-                font-weight: bold;
-            }
-        }
-    }
-}
-
 .main {
     @include row;
     justify-content: center;
@@ -112,9 +25,10 @@ body {
 
     &__top {
         @include row;
+        align-items: flex-end;
         justify-content: center;
         width: 90%;
-        margin-bottom: 1rem;
+        margin: .6rem 0 1rem;
 
         &--head {
             color: rgb(11, 75, 11);
@@ -134,7 +48,7 @@ body {
 
         &--blink {
             animation: blink-animation cubic-bezier 1s steps(5, start) infinite;
-            -webkit-animation: blink-animation 3s steps(5, start) infinite;
+            -webkit-animation: blink-animation 2.5s steps(5, start) infinite;
             align-self: flex-start;
             border-radius: 50%;
             position: relative;
@@ -153,6 +67,7 @@ body {
 
     &__form {
         @include column;
+        margin-top: .6rem;
 
         &--box {
             all: unset;
@@ -259,34 +174,8 @@ body {
     &__title {
         margin: .5rem 0;
     }
-}
 
-
-
-.footer {
-    width: 100%;
-    background-color: goldenrod;
-    color: black;
-    @include row;
-    justify-content: center;
-    height: 10.6vh;
-    padding: 1rem 0 2rem;
-
-    &__columns {
-        @include row;
-        justify-content: space-between;
-        text-align: center;
-        width: 70%;
-    }
-
-    &__column {
-        font-weight: 500;
-        @include column;
-        font-size: 1.2rem;
-
-        &--info {
-            font-size: 0.8rem;
-            margin: 0;
-        }
+    &__data {
+        color: yellow;
     }
 }
