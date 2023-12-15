@@ -247,7 +247,6 @@ function renderNetworkData(displayableData) {
   name.innerText = displayableData.name;
   hp.innerText = displayableData.hp;
   attack.innerText = displayableData.attack;
-  hp.innerText = displayableData.hp;
   defense.innerText = displayableData.defense;
   speed.innerText = displayableData.speed;
   image.setAttribute("src", displayableData.imgSrc);
