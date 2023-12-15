@@ -1,6 +1,9 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
+*{
+    box-sizing: border-box;
+}
 body {
     font-family: avenir, Arial, Helvetica, sans-serif;
     margin: 0;
@@ -30,6 +33,7 @@ body {
 .nav {
     background-color: goldenrod;
     margin: 0;
+    padding-left: 2vw;
     @include row;
     justify-content: flex-start;
     height: 10vh;
@@ -44,7 +48,7 @@ body {
 
     &__logo {
         margin: 0;
-        padding: 0 2rem;
+        // padding: 0 2rem;
         transition: 0.3s;
         width: 4rem;
 

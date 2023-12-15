@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: avenir, Arial, Helvetica, sans-serif;
   margin: 0;
@@ -23,6 +27,7 @@ body svg {
 .nav {
   background-color: goldenrod;
   margin: 0;
+  padding-left: 2vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,7 +45,6 @@ body svg {
 }
 .nav__logo {
   margin: 0;
-  padding: 0 2rem;
   transition: 0.3s;
   width: 4rem;
 }
