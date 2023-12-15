@@ -92,7 +92,7 @@ body {
 .main {
     @include row;
     justify-content: center;
-    background-image: url("../assets/scene.webp");
+    background-image: url("../assets/scene.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -155,7 +155,9 @@ body {
         &--box {
             all: unset;
             font: 16px system-ui;
-            color: #fff;
+            color: yellow;
+            font-weight: bold;
+            letter-spacing: .1rem;
             height: 100%;
             width: 100%;
             padding: 6px 10px;
@@ -174,14 +176,14 @@ body {
             cursor: pointer;
             width: 60%;
             @include row;
-            justify-content: center;
+            justify-content: space-around;
             background-color: $blue;
             border-radius: 10%;
             color: aliceblue;
             font-weight: bold;
             letter-spacing: 0.2rem;
             padding: 1rem 1rem;
-            border: 2px solid rgb(57, 57, 251);
+            border: 2px solid rgb(2, 2, 52);
             margin: 1rem 0 2rem;
             height: 2rem;
 
@@ -264,7 +266,7 @@ body {
     color: black;
     @include row;
     justify-content: center;
-    height: 10vh;
+    height: 10.6vh;
 
     &__columns {
         @include row;
