@@ -100,6 +100,8 @@ body svg {
   border-radius: 0.8rem;
   margin-top: 4rem;
   margin-left: 2rem;
+  align-self: flex-start;
+  border: rgb(149, 15, 15) 0.1rem solid;
 }
 .search__top {
   display: flex;
@@ -201,9 +203,9 @@ body svg {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 30%;
   border-radius: 0.8rem;
-  border: 0.2rem rgb(220, 17, 17) solid;
+  border: 2rem rgb(220, 17, 17) solid;
   padding: 2rem 0 2rem;
   margin-top: 4rem;
 }
@@ -219,6 +221,7 @@ body svg {
   margin-top: 4rem;
   padding-bottom: 3rem;
   margin-right: 2rem;
+  border: rgb(149, 15, 15) 0.1rem solid;
 }
 .stats__eq {
   display: flex;
@@ -259,6 +262,7 @@ body svg {
   align-items: center;
   justify-content: center;
   height: 10.6vh;
+  padding: 1rem 0 2rem;
 }
 .footer__columns {
   display: flex;

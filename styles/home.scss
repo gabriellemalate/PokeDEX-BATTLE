@@ -107,6 +107,8 @@ body {
     border-radius: 0.8rem;
     margin-top: 4rem;
     margin-left: 2rem;
+    align-self: flex-start;
+    border: $red-deep .1rem solid;
 
     &__top {
         @include row;
@@ -209,9 +211,9 @@ body {
 .photo {
     background-color: rgb(23, 18, 18);
     @include column;
-    width: 40%;
+    width: 30%;
     border-radius: 0.8rem;
-    border: .2rem $red solid;
+    border: 2rem $red solid;
     padding: 2rem 0 2rem;
     margin-top: 4rem;
 }
@@ -225,6 +227,7 @@ body {
     margin-top: 4rem;
     padding-bottom: 3rem;
     margin-right: 2rem;
+    border: $red-deep .1rem solid;
 
     &__eq {
         @include column;
@@ -267,6 +270,7 @@ body {
     @include row;
     justify-content: center;
     height: 10.6vh;
+    padding: 1rem 0 2rem;
 
     &__columns {
         @include row;
