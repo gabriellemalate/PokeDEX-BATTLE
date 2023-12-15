@@ -94,6 +94,7 @@ const battleApiInstance = new PokemonApi();
 buildHTMLStructure();
 
 makeFirstNetworkRequest(pickOpponent());
+makeSecondNetworkRequest("squirtle");
 
 // On search button clicked
 async function handlePSearchEvent(event) {
