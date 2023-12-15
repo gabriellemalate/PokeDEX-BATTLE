@@ -3,8 +3,12 @@
 @use "./partials/global";
 
 .main-battler {
-    @include row;
-    justify-content: space-evenly;
+    
+    @include tabletPlus{
+        @include row;
+        justify-content: space-evenly;
+    }
+    
 
     &__button {
         all: unset;
@@ -126,30 +130,53 @@
         margin: .5rem 0;
     }
 }
+.battlefield{
+    display: flex;
+    flex-direction: row;
 
+    @include tabletPlus{
+        flex-direction: row;
+    }
+}
 .user {
     @include column;
     justify-content: space-between;
-    height: 100vh;
+    // height: 100vh;
 
     &__status {
         position: relative;
-        top: 5rem;
-        left: 18rem;
+        // top: 5rem;
+        // left: 18rem;
         background-color: yellow;
     }
 
     &__streak {
         position: relative;
-        top: 4rem;
+        // top: 4rem;
         background-color: yellow;
     }
 
     &__image {
-        align-self: flex-end;
+        width: 100%;
+
+        @include tabletPlus{
+            align-self: flex-end;
+            width: unset;
+        }
     }
 }
 
 .opponent {
-    align-self: flex-start;
+    width: 45vw;
+    &__image {
+        width: 100%;
+
+        @include tabletPlus{
+
+        }
+    }
+
+    @include tabletPlus{
+        align-self: flex-start;
+    }
 }

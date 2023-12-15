@@ -115,11 +115,13 @@ body svg {
   margin: 0;
 }
 
-.main-battler {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+@media (min-width: 768px) {
+  .main-battler {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }
 .main-battler__button {
   all: unset;
@@ -255,28 +257,48 @@ body svg {
   margin: 0.5rem 0;
 }
 
+.battlefield {
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: 768px) {
+  .battlefield {
+    flex-direction: row;
+  }
+}
+
 .user {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
 }
 .user__status {
   position: relative;
-  top: 5rem;
-  left: 18rem;
   background-color: yellow;
 }
 .user__streak {
   position: relative;
-  top: 4rem;
   background-color: yellow;
 }
 .user__image {
-  align-self: flex-end;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .user__image {
+    align-self: flex-end;
+    width: unset;
+  }
 }
 
 .opponent {
-  align-self: flex-start;
+  width: 45vw;
+}
+.opponent__image {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .opponent {
+    align-self: flex-start;
+  }
 }/*# sourceMappingURL=battler.css.map */
