@@ -11,7 +11,7 @@ function createElement(tag, attributes, parent) {
 }
 
 // Function to build the HTML structure
-function buildHTMLStructure() {
+function buildHTMLStructure(pokemonObj) {
   // header
   const header = createElement("header", null, document.body);
   const nav = createElement("nav", { class: "nav" }, header);
@@ -112,7 +112,7 @@ function buildHTMLStructure() {
   );
   createElement(
     "img",
-    { src: "./assets/squirtle.png", alt: "placeholder pokemon" },
+    { src: pokemonObj.imgSrc, class: "photo__platform__image" },
     photoPlatform
   );
 
@@ -121,16 +121,31 @@ function buildHTMLStructure() {
   const statsEq = createElement("div", { class: "stats__eq" }, stats);
   createElement("h4", { class: "stats__head" }, statsEq).innerText = "STATS";
   const statsInfo = createElement("article", { class: "stats__info" }, statsEq);
-  createElement("p", { class: "stats__title" }, statsInfo).innerHTML =
-    "Name: <span class='stats__data'></span>";
-  createElement("p", { class: "stats__title" }, statsInfo).innerHTML =
-    "HP: <span class='stats__data'></span>";
-  createElement("p", { class: "stats__title" }, statsInfo).innerHTML =
-    "Attack: <span class='stats__data'></span>";
-  createElement("p", { class: "stats__title" }, statsInfo).innerHTML =
-    "Defense: <span class='stats__data'></span>";
-  createElement("p", { class: "stats__title" }, statsInfo).innerHTML =
-    "Speed: <span class='stats__data'></span>";
+  createElement(
+    "p",
+    { class: "stats__title" },
+    statsInfo
+  ).innerHTML = `Name: <span class='stats__data'  id="name">${pokemonObj.name}</span>`;
+  createElement(
+    "p",
+    { class: "stats__title" },
+    statsInfo
+  ).innerHTML = `HP: <span class='stats__data' id="hp">${pokemonObj.hp}</span>`;
+  createElement(
+    "p",
+    { class: "stats__title" },
+    statsInfo
+  ).innerHTML = `Attack: <span class='stats__data' id="attack">${pokemonObj.attack}</span>`;
+  createElement(
+    "p",
+    { class: "stats__title" },
+    statsInfo
+  ).innerHTML = `Defense: <span class='stats__data' id="defense">${pokemonObj.defense}</span>`;
+  createElement(
+    "p",
+    { class: "stats__title" },
+    statsInfo
+  ).innerHTML = `Speed: <span class='stats__data' id="speed">${pokemonObj.speed}</span>`;
 
   // footer
   const footer = createElement("footer", { class: "footer" }, document.body);
@@ -182,16 +197,27 @@ function buildHTMLStructure() {
 }
 let apiInstance = new PokemonApi();
 
-// Invoking the function to build the HTML structure
-buildHTMLStructure();
+// makeNetworkRequest("squirtle");
+buildHTMLStructure({
+  name: "Squirtle",
+  hp: 44,
+  attack: 48,
+  defense: 65,
+  speed: 43,
+  imgSrc:
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+});
+
+async function makeNetworkRequest(pokemonName) {
+  const result = await apiInstance.getPokemon(pokemonName);
+
+  gatherDisplayData(result.data);
+}
 
 // On search button clicked
 async function handleSearchEvent(event) {
   event.preventDefault();
-  const result = await apiInstance.getPokemon(event.target.text.value);
-  //   console.log(result.data.name);
-
-  gatherDisplayData(result.data);
+  makeNetworkRequest(event.target.text.value);
 }
 
 // Make an object of data to display from network response
@@ -200,16 +226,29 @@ function gatherDisplayData(displayDataObj) {
     name: displayDataObj.name,
     hp: displayDataObj.stats[0].base_stat,
     attack: displayDataObj.stats[1].base_stat,
+    defense: displayDataObj.stats[2].base_stat,
     speed: displayDataObj.stats[5].base_stat,
     imgSrc: displayDataObj.sprites.other["official-artwork"].front_default,
   };
 
   console.log(displayableData);
-
-  renderPokemonData(displayableData);
+  // Display with data from network
+  renderNetworkData(displayableData);
 }
 
-// Display the data from the network
-function renderPokemonData(displayableData) {
-  // TODO: set stats and image values to displayableData object values.
+function renderNetworkData(displayableData) {
+  const image = document.querySelector(".photo__platform__image");
+  const name = document.querySelector("#name");
+  const hp = document.querySelector("#hp");
+  const attack = document.querySelector("#attack");
+  const defense = document.querySelector("#defense");
+  const speed = document.querySelector("#speed");
+
+  name.innerText = displayableData.name;
+  hp.innerText = displayableData.hp;
+  attack.innerText = displayableData.attack;
+  hp.innerText = displayableData.hp;
+  defense.innerText = displayableData.defense;
+  speed.innerText = displayableData.speed;
+  image.setAttribute("src", displayableData.imgSrc);
 }
